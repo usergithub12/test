@@ -1,0 +1,14 @@
+> ping
+
+if [ -e ./ping2 ] > ping2
+
+for i in {110..113}
+
+do
+	
+ping -c1 "10.7.180.${i}" &>> /dev/null && echo "10.7.180.${i} +" >> ping || echo "10.7.180.${i} -" >> ping
+done
+
+diff ~/ping ~/ping2 &>> /dev/null ||  echo "+"  | mail -s "subj: test" slwpke447@gmail.comi
+cp ping ping2
+
